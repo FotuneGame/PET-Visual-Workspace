@@ -8,6 +8,8 @@ import { RouterProvider} from "react-router-dom";
 import {router} from '@router';
 import Loading from "@components/layout/Loading";
 
+import './i18n';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
