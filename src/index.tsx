@@ -9,6 +9,7 @@ import {router} from '@router';
 import Loading from "@components/layout/Loading";
 
 import './i18n';
+import ThemeProvider from '@providers/ThemeProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,7 +17,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} fallbackElement={<Loading />} future={{ v7_startTransition: true }}/>
+      <ThemeProvider>
+        <RouterProvider router={router} fallbackElement={<Loading />} future={{ v7_startTransition: true }}/>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );
