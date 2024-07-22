@@ -14,5 +14,5 @@ i18next
 
 export const langs = {
     en: {nativeName:"Engilsh"},
-    ru: {nativeName:"Russian"},
+    ru: {nativeName:"Русский"},
 }

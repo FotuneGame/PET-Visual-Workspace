@@ -1,4 +1,9 @@
 {
-    "Main": "Main",
-    "main_description":"Description"
+    "language":"Language",
+    "theme":{
+        "name":"Theme",
+        "dark": "Dark",
+        "light": "Light",
+        "system": "System"
+    }
 }

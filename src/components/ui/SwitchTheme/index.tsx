@@ -2,17 +2,22 @@ import React from "react";
 import { ThemeContext } from "@/providers/ThemeProvider";
 import { useContext } from "react";
 import style from "./style.module.scss";
+import Button from "../Button";
+import { useTranslation } from 'react-i18next';
+
+
 
 const SwitchTheme = () =>{
-    const context = useContext(ThemeContext);
+    const {t} = useTranslation();
+    const context = useContext(ThemeContext) ;
     if(!context) return null;
     const [theme,setTheme] = context;
 
     return(
         <div className={style.wrapper}>
-            <button onClick={()=>setTheme("light")} disabled={theme==="light"}>Light</button>
-            <button onClick={()=>setTheme("dark")} disabled={theme==="dark"}>Dark</button>
-            <button onClick={()=>setTheme(undefined)} disabled={localStorage.getItem("theme")==="system"}>System</button>
+            <Button type="link" onClick={()=>setTheme("light")} disabled={theme==="light"}>{t("theme.light")}</Button>
+            <Button type="link" onClick={()=>setTheme("dark")} disabled={theme==="dark"}>{t("theme.dark")}</Button>
+            <Button type="link" onClick={()=>setTheme(undefined)} disabled={localStorage.getItem("theme")==="system"}>{t("theme.system")}</Button>
         </div>
     );
 }

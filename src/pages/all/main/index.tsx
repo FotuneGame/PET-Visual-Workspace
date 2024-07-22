@@ -10,6 +10,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import SwitchLang from "@/components/ui/SwitchLang";
 import SwitchTheme from "@/components/ui/SwitchTheme";
 import Button from "@/components/ui/Button";
+import Dropdown from "@/components/ui/Dropdown";
 
 
 
@@ -21,16 +22,18 @@ const Main = () =>{
     const {t} = useTranslation();
 
     return(
-        <>
+        <div style={{display:"flex",justifyContent:"space-between"}}>
 
             <button onClick={()=>dispatch(actions.setValue(value+1))}>plus</button>
             {value}
 
-            <SwitchLang />
-            <Trans i18nKey={"Main"}/>
-            <Trans i18nKey={"main_description"}/>
+            <Dropdown name={t("language")}>
+                <SwitchLang />
+            </Dropdown>
 
-            <SwitchTheme />
+            <Dropdown name={t("theme.name")}>
+                <SwitchTheme />
+            </Dropdown>
 
             <>
                 <Button type="agree" onClick={()=>{}} >Agree</Button>
@@ -45,6 +48,7 @@ const Main = () =>{
                 <Button type="ghost" onClick={()=>{}} >ghost</Button>
                 <Button type="ghost" onClick={()=>{}} disabled>ghost</Button>
 
+
                 <Button type="link" onClick={()=>{}} >link</Button>
                 <Button type="link" onClick={()=>{}} disabled>link</Button>
 
@@ -52,7 +56,7 @@ const Main = () =>{
                 <Button onClick={()=>{}} disabled>default</Button>
             </>
 
-        </>
+        </div>
     )
 }
 

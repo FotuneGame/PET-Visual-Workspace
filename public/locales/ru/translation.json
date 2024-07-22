@@ -1,4 +1,9 @@
 {
-    "Main": "Главная",
-    "main_description":"Описание"
+    "language":"Язык",
+    "theme":{
+        "name":"Тема",
+        "dark": "Тёмная",
+        "light": "Светлая",
+        "system": "Системная"
+    }
 }
