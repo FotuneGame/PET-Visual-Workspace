@@ -2,8 +2,8 @@ import { createBrowserRouter,RouteObject } from "react-router-dom";
 import { authRouters } from "./auth";
 import { loginRouters } from "./login";
 import NotFound from "@components/layout/NotFound";
-import App from "@/App";
 import Pages from "@pages";
+import App from "@/App";
 
 const routes: RouteObject[] = [
     {
@@ -27,7 +27,13 @@ const routes: RouteObject[] = [
             path: Pages.all.pricing.url,
             element: Pages.all.pricing.page,
            },
-           ...authRouters,
+           {
+            path: Pages.auth.url,
+            element: Pages.auth.page,
+            children:[
+                ...authRouters,
+            ]
+           },
            ...loginRouters,
         ]
     },

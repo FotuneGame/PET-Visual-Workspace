@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Private from './auth/Private';
+
 const About = React.lazy(()=>import("./all/about"));
 const Community = React.lazy(()=>import("./all/community"));
 const Main = React.lazy(()=>import("./all/main"));
@@ -43,6 +45,8 @@ const Pages = {
         },
     },
     auth:{
+        page: <Private />,
+        url: "/auth",
         with_params:{
             asset:{
                 page: <Asset />,
