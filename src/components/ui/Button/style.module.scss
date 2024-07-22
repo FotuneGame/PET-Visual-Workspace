@@ -1,0 +1,133 @@
+.btn{
+    border-radius: 4px;
+    padding: 0.25rem;
+}
+
+
+
+.agree{
+    border: 0px;
+    color: white;
+    background-color: #0c8ce9;
+}
+
+.agree:hover{
+    border: 0px;
+    color: white;
+    background-color: #0f9bff;
+}
+
+.agree:disabled{
+    border: 0px;
+    color: gray;
+    background-color: #0a4f80;
+}
+
+
+
+
+.destructive{
+    border: 0px;
+    color: white;
+    background-color: #EF4444;
+}
+.destructive:hover{
+    border: 0px;
+    color: white;
+    background-color: #ff1e1e;
+}
+
+.destructive:disabled{
+    border: 0px;
+    color: gray;
+    background-color: #611d1d;
+}
+
+
+
+.outline{
+    color: black;
+    background-color: rgba(0,0,0,0);
+    border-width: 1px;
+    border-color: #232326;
+}
+.outline:hover{
+    color: black;
+    background-color: #cfcfcf;
+    border-width: 1px;
+    border-color: #3c3c41;
+}
+
+.outline:disabled{
+    color: gray;
+    background-color: rgba(0,0,0,0);
+    border-width: 1px;
+    border-color: #2e2e2e;
+}
+
+
+
+.ghost{
+    color: black;
+    background-color: rgba(0,0,0,0);
+    border: 0px;
+}
+.ghost:hover{
+    color: black;
+    background-color: #cfcfcf;
+}
+
+.ghost:disabled{
+    color: gray;
+    background-color: rgba(0,0,0,0);
+}
+
+
+
+.link{
+    color: black;
+    border-width: 0px;
+    background-color: rgba(0,0,0,0);
+    border-bottom: 0px;
+}
+.link:hover{
+    color: black;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 0px;
+    border-bottom: solid 1px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+.link:disabled{
+    color: gray;
+    border-color: gray;
+    border-width: 1px;
+    border-radius: 0px;
+    border-bottom: solid 1px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+
+
+.default{
+    border: 0px;
+    color: white;
+    background-color: #232326;
+}
+
+.default:hover{
+    border: 0px;
+    color: white;
+    background-color: #3c3c41;
+}
+
+.default:disabled{
+    border: 0px;
+    color: gray;
+    background-color: #2e2e2e;
+}

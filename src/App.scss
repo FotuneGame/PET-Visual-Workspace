@@ -1,12 +1,12 @@
 @use "./App.dark.scss";
+@use "./Fonts.scss";
 
-body{
+*{
     margin: 0;
     padding: 0;
-    display: block;
+    font-family: "Lato";
 }
 
-
-.App{
-    background: red;
+body{
+    --backgroud_dark: white;
 }

@@ -1,3 +1,4 @@
 body.dark{
-    background: gray;
+    --backgroud_dark: #09090B;
+    background: var(--backgroud_dark);
 }

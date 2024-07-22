@@ -1,0 +1,43 @@
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg) scale(50%);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.load{
+    position: relative;
+    top:50%;
+    left:50%;
+    margin-left: -25px;
+    margin-right: -25px;
+    width: 50px;
+    height: 50px;
+    border: solid;
+    border-radius: 25%;
+    border-width: 3px;
+    animation: loading 5s linear infinite;
+}
+
+.back{
+    z-index: 9999;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--backgroud_dark);
+}
+
+.dark{
+    border-color: white;
+}
+
+.light{
+    border-color: black;
+}
