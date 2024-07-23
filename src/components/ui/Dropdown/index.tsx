@@ -4,6 +4,8 @@ import Button from "../Button";
 import { ThemeContext } from "@/providers/ThemeProvider";
 import { useOutside } from "@/hooks/useOutside";
 
+import { FiChevronDown  } from "react-icons/fi";
+
 interface IProps{
     name:string,
     children:React.ReactChild
@@ -22,7 +24,12 @@ const Dropdown: FC<IProps> = ({name,children}) =>{
 
     return(
         <div ref={ariaRef}>
-            <Button type="outline" onClick={()=>setActive(!active)}>{name}</Button>
+            <Button type="outline" onClick={()=>setActive(!active)}>
+                <div className={style.btn_main}>
+                    {name}
+                    <FiChevronDown  color={theme==="light" ? "black" : "white"} size="1rem"/>
+                </div>
+            </Button>
             {active &&             
                 <div className={[style.wrapper,theme==="light" ? style.light : style.dark].join(" ")}>
                     {children}

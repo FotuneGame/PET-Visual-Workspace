@@ -1,0 +1,37 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap:0.25rem;
+    textarea{
+        border-radius: 4px;
+        padding: 0.5rem;
+    }
+}
+
+.dark{
+    color: white;
+    textarea{
+        color: white;
+        border: 1px solid gray;
+        background-color: var(--backgroud_dark);
+    }
+    textarea:active{
+        border: 1px solid white;
+    }
+    textarea::placeholder{
+        color: gray;
+    }
+}
+
+.light{
+    textarea{
+        border: 1px solid gray;
+        background-color: var(--backgroud_dark);
+    }
+    textarea:active{
+        border: 1px solid black;
+    }
+    textarea::placeholder{
+        color: gray;
+    }
+}

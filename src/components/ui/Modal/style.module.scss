@@ -1,0 +1,50 @@
+.wrapper{
+    position: absolute;
+    display: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.66);
+    .content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .back{
+            min-width: 50%;
+            border-radius: 4px;
+            padding: 0.5rem;
+            .header{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .back{
+                border-radius: 0px;
+                width: 100%;
+                height: 100%;
+                .body{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.dark{
+    border: 1px solid gray;
+    background: var(--backgroud_dark);
+    color: white;
+}
+
+.light{
+    background: white;
+    color: black;
+}

@@ -1,0 +1,27 @@
+.wrapper{
+    z-index: 2;
+    display: inline-flex;
+    padding: 0.25rem;
+    gap:1rem;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.dark{
+    border: 1px solid white;
+}
+
+.light{
+    border: 1px solid black;
+}
+
+.wrapper_error{
+    z-index: 2;
+    display: inline-flex;
+    padding: 0.25rem;
+    gap:1rem;
+    align-items: center;
+    color: #EF4444;
+    border-radius: 4px;
+    border: 1px solid #EF4444;
+}

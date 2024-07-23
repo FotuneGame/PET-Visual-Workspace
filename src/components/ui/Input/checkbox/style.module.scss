@@ -1,0 +1,51 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    gap:0.25rem;
+    input[type="checkbox"] {
+        -webkit-appearance: none;
+        appearance: none;
+        /* creating a custom design */
+        width: 1rem;
+        height: 1rem;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+    }
+    input:checked {
+        position: relative;
+    }
+    input:checked::before {
+        content: "";
+        text-align: center;
+        border-radius: 4px;
+        position: absolute;
+        right: -1px;
+        top: -1px;
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+.dark{
+    color: white;
+    input[type="checkbox"]{
+        border: 1px solid gray;
+        background-color: var(--backgroud_dark);
+    }
+    input:checked::before{
+        color: black;
+        background-color: white;
+    }
+}
+
+.light{
+    input[type="checkbox"]{
+        border: 1px solid gray;
+        background-color: var(--backgroud_dark);
+    }
+    input:checked::before{
+        color: white;
+        background-color: black;
+    }
+}
