@@ -9,9 +9,10 @@ interface IProps{
     label: string,
     placeholder?: string,
     value?: any,
+    disabled?:boolean
 }
 
-const PhoneInput:FC<IProps> = React.memo(({label,placeholder,value,callback})=>{
+const PhoneInput:FC<IProps> = React.memo(({label,placeholder,value,callback,disabled})=>{
 
     const [theme] = useContext(ThemeContext) ?? ["light"];
 
@@ -29,7 +30,7 @@ const PhoneInput:FC<IProps> = React.memo(({label,placeholder,value,callback})=>{
             return callback(e);
         }
 
-        if(value.length!=0){
+        if(value.length!==0){
             let formated_str = "";
             if(["7",'8','9'].indexOf(value[0])> -1){
                 //russian number
@@ -59,9 +60,9 @@ const PhoneInput:FC<IProps> = React.memo(({label,placeholder,value,callback})=>{
     }
 
     return(
-        <div className={[style.wrapper,theme==='light' ? style.light : style.dark].join(" ")}>
+        <div className={[style.wrapper,theme==='light' ? style.light : style.dark, disabled ? style.disabled : ""].join(" ")}>
             <label>{label}</label>
-            <input placeholder={placeholder} type="tel" value={value} maxLength={18} onChange={valid}/>
+            <input placeholder={placeholder} type="tel" value={value} maxLength={18} onChange={valid} disabled={disabled}/>
         </div>
     )
 });

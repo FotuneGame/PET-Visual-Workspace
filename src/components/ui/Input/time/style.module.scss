@@ -11,6 +11,9 @@
         align-items: center;
         gap:0.25rem;
     }
+    ::-webkit-calendar-picker-indicator{
+        display: none;
+    }
 }
 
 .dark{

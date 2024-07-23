@@ -11,25 +11,31 @@ interface IProps{
     label: string,
     placeholder?: string,
     value?: any,
+    disabled?: boolean
 }
 
-const PasswordInput:FC<IProps> = React.memo(({label,placeholder,value,callback})=>{
+const PasswordInput:FC<IProps> = React.memo(({label,placeholder,value,callback,disabled})=>{
     const [view,setView] = useState<boolean>(false);
 
     const [theme] = useContext(ThemeContext) ?? ["light"];
     return(
-        <div className={[style.wrapper,theme==='light' ? style.light : style.dark].join(" ")}>
+        <div className={[style.wrapper,theme==='light' ? style.light : style.dark, disabled ? style.disabled : ""].join(" ")}>
             <label>{label}</label>
             <div className={style.field}>
-                <input placeholder={placeholder} type={view ? "text" : "password"} value={value} onChange={callback}/>
-                <Button type="ghost" onClick={()=>{setView(!view)}}>
-                    {
-                        view ?
-                        <FiEye  color={theme==="light" ? "black" : "white"} size="1.5rem"/>
-                        :
-                        <FiEyeOff   color={theme==="light" ? "black" : "white"} size="1.5rem"/>
-                    }
-                </Button>
+                <input placeholder={placeholder} type={view ? "text" : "password"} value={value} onChange={callback} disabled={disabled}/>
+                {
+                    disabled ?
+                        <FiEyeOff  color={"gray"} size="1.5rem"/>
+                    :
+                        <Button type="ghost" onClick={()=>{setView(!view)}}>
+                            {
+                                view ?
+                                <FiEye  color={theme==="light" ? "black" : "white"} size="1.5rem"/>
+                                :
+                                <FiEyeOff   color={theme==="light" ? "black" : "white"} size="1.5rem"/>
+                            }
+                        </Button>
+                }
             </div>
         </div>
     )

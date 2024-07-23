@@ -1,0 +1,36 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    gap:0.25rem;
+    input[type="color"] {
+        border: none;
+        padding: 0px;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+    }
+
+}
+
+.dark{
+    color: white;
+    input[type="color"]{
+        background-color: var(--backgroud_dark);
+    }
+}
+
+.light{
+    input[type="color"]{
+        background-color: var(--backgroud_dark);
+    }
+}
+
+.disabled{
+    input[type="color"]{
+        cursor: default;
+        border: none;
+    }
+    color: gray;
+}

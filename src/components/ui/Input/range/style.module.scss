@@ -2,42 +2,32 @@
     display: flex;
     flex-direction: column;
     gap:0.25rem;
-    input{
+    input[type="range"]{
         border-radius: 4px;
-        padding: 0.5rem;
-    }
-    .field{
-        display: flex;
-        align-items: center;
-        gap:0.25rem;
     }
 }
 
 .dark{
     color: white;
-    input{
+    input[type="range"]{
         color: white;
+        accent-color: white;
         border: 1px solid gray;
         background-color: var(--backgroud_dark);
     }
-    input:active{
+    input[type="range"]:active{
         border: 1px solid white;
-    }
-    input::placeholder{
-        color: gray;
     }
 }
 
 .light{
-    input{
+    input[type="range"]{
         border: 1px solid gray;
+        accent-color: black;
         background-color: var(--backgroud_dark);
     }
-    input:active{
+    input[type="range"]:active{
         border: 1px solid black;
-    }
-    input::placeholder{
-        color: gray;
     }
 }
 

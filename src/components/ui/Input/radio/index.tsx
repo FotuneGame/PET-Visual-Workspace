@@ -7,20 +7,20 @@ import { ThemeContext } from "@/providers/ThemeProvider";
 interface IProps{
     callback: (event: React.ChangeEvent<HTMLInputElement>) => void,
     label: string,
-    placeholder?: string,
     value?: any,
+    name?: string,
     disabled?:boolean
 }
 
-const TextInput:FC<IProps> = React.memo(({label,placeholder,value,callback,disabled})=>{
-
+const RadioInput:FC<IProps> = React.memo(({label,value,name,callback,disabled})=>{
+    
     const [theme] = useContext(ThemeContext) ?? ["light"];
     return(
-        <div className={[style.wrapper,theme==='light' ? style.light : style.dark, disabled ? style.disabled : ""].join(" ")}>
+        <div className={[style.wrapper, theme==='light' ? style.light : style.dark, disabled ? style.disabled : ""].join(" ")}>
             <label>{label}</label>
-            <input placeholder={placeholder} type="text" value={value} onChange={callback} disabled={disabled}/>
+            <input type="radio" value={value} name={name}  onChange={callback} disabled={disabled}/>
         </div>
     )
 });
 
-export default TextInput;
+export default RadioInput;

@@ -11,6 +11,9 @@
         align-items: center;
         gap:0.25rem;
     }
+    ::-webkit-file-upload-button{
+        display: none;
+    }
 }
 
 .dark{

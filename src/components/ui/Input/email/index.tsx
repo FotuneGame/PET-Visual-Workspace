@@ -9,15 +9,16 @@ interface IProps{
     label: string,
     placeholder?: string,
     value?: any,
+    disabled?: boolean
 }
 
-const EmailInput:FC<IProps> = React.memo(({label,placeholder,value,callback})=>{
+const EmailInput:FC<IProps> = React.memo(({label,placeholder,value,callback,disabled})=>{
 
     const [theme] = useContext(ThemeContext) ?? ["light"];
     return(
-        <div className={[style.wrapper,theme==='light' ? style.light : style.dark].join(" ")}>
+        <div className={[style.wrapper,theme==='light' ? style.light : style.dark, disabled ? style.disabled : ""].join(" ")}>
             <label>{label}</label>
-            <input placeholder={placeholder} type="email" value={value} onChange={callback}/>
+            <input placeholder={placeholder} type="email" value={value} onChange={callback} disabled={disabled}/>
         </div>
     )
 });

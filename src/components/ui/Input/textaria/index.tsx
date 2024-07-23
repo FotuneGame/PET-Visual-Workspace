@@ -10,15 +10,16 @@ interface IProps{
     placeholder?: string,
     value?: any,
     rows?: number,
+    disabled?:boolean
 }
 
-const Texrarea:FC<IProps> = React.memo(({label,placeholder,value,callback, rows})=>{
+const Texrarea:FC<IProps> = React.memo(({label,placeholder,value,callback, rows,disabled})=>{
 
     const [theme] = useContext(ThemeContext) ?? ["light"];
     return(
-        <div className={[style.wrapper,theme==='light' ? style.light : style.dark].join(" ")}>
+        <div className={[style.wrapper,theme==='light' ? style.light : style.dark, disabled ? style.disabled : ""].join(" ")}>
             <label>{label}</label>
-            <textarea placeholder={placeholder} rows={rows ?? 3} value={value} onChange={callback}/>
+            <textarea placeholder={placeholder} rows={rows ?? 3} value={value} onChange={callback} disabled={disabled}/>
         </div>
     )
 });

@@ -26,15 +26,35 @@ const Main = () =>{
     const {t} = useTranslation();
 
     //exemple for inputs
-    const [inputs,setInputs] = useState({
+    const [inputs,setInputs] = useState<{
+        text:string,
+        password:string,
+        textaria:string,
+        phone:string,
+        email:string,
+        checkbox: boolean,
+        radio: string,
+        color: string,
+        number: string,
+        range: string,
+        files: FileList | null,
+        date: string,
+        time: string, 
+    }>({
         text:"",
         password:"",
         textaria:"",
         phone:"",
         email:"",
-        checkbox: false
+        checkbox: false,
+        radio: "",
+        color: "",
+        number: "",
+        range: "",
+        files: null,
+        date:"",
+        time:"",
     });
-
     useEffect(()=>{
         console.log(inputs);
     },[inputs])
@@ -95,11 +115,45 @@ const Main = () =>{
 
             <>
                 <Input type="text" label="Text" placeholder="some txt" value={inputs.text} callback={(e)=>(setInputs(state  => ({...state, text:e.target.value})) )}/>
+                <Input type="text" disabled label="Text" placeholder="some txt" value={inputs.text} callback={(e)=>(setInputs(state  => ({...state, text:e.target.value})) )}/>
+
                 <Input type="password" label="Password" placeholder="12345" value={inputs.password} callback={(e)=>(setInputs(state  => ({...state, password:e.target.value})) )}/>
+                <Input type="password" disabled label="Password" placeholder="12345" value={inputs.password} callback={(e)=>(setInputs(state  => ({...state, password:e.target.value})) )}/>
+
                 <Input type="textarea" label="TextAria" placeholder="some txt" value={inputs.textaria} callback={(e)=>(setInputs(state  => ({...state, textaria:e.target.value})) )}/>
+                <Input type="textarea" disabled label="TextAria" placeholder="some txt" value={inputs.textaria} callback={(e)=>(setInputs(state  => ({...state, textaria:e.target.value})) )}/>
+
                 <Input type="phone" label="Phone" placeholder="some txt" value={inputs.phone} callback={(e)=>(setInputs(state  => ({...state, phone:e.target.value})) )}/>
+                <Input type="phone" disabled label="Phone" placeholder="some txt" value={inputs.phone} callback={(e)=>(setInputs(state  => ({...state, phone:e.target.value})) )}/>
+
                 <Input type="email" label="Email" placeholder="some txt" value={inputs.email} callback={(e)=>(setInputs(state  => ({...state, email:e.target.value})) )}/>
+                <Input type="email" disabled label="Email" placeholder="some txt" value={inputs.email} callback={(e)=>(setInputs(state  => ({...state, email:e.target.value})) )}/>
+
                 <Input type="checkbox" label="Checkbox" value={inputs.checkbox} callback={(e)=>(setInputs(state  => ({...state, checkbox:(e.target as HTMLInputElement).checked})) )}/>
+                <Input type="checkbox" disabled label="Checkbox" value={inputs.checkbox} callback={(e)=>(setInputs(state  => ({...state, checkbox:(e.target as HTMLInputElement).checked})) )}/>
+            
+                <Input type="radio" label="Radio 1" value={"1"} name={"Выборка radio"} callback={(e)=>(setInputs(state  => ({...state, radio:e.target.value})) )}/>
+                <Input type="radio" label="Radio 2" value={"2"} name={"Выборка radio"} callback={(e)=>(setInputs(state  => ({...state, radio:e.target.value})) )}/>
+                <Input type="radio" disabled label="Radio 1" value={"1"} name={"Выборка radio"} callback={(e)=>(setInputs(state  => ({...state, radio:e.target.value})) )}/>
+
+                <Input type="color" label="Color" value={inputs.color} callback={(e)=>(setInputs(state  => ({...state, color:e.target.value})) )}/>
+                <Input type="color" disabled label="Color" value={inputs.color} callback={(e)=>(setInputs(state  => ({...state, color:e.target.value})) )}/>
+
+                <Input type="number" max={1000} min={-1000} step={0.01} label="Number" placeholder="some txt" value={inputs.number} callback={(e)=>(setInputs(state  => ({...state, number:e.target.value})) )}/>
+                <Input type="number" disabled label="Number" placeholder="some txt" value={inputs.number} callback={(e)=>(setInputs(state  => ({...state, number:e.target.value})) )}/>
+
+                <Input type="range" max={1000} min={-1000} step={10} label="Range" value={inputs.range} callback={(e)=>(setInputs(state  => ({...state, range:e.target.value})) )}/>
+                <Input type="range" max={1000} min={-1000} step={10} disabled label="Range" value={inputs.range} callback={(e)=>(setInputs(state  => ({...state, range:e.target.value})) )}/>
+            
+                <Input type="file" label="Files" value={inputs.files} callback={(e)=>(setInputs(state  => ( {...state,files: (e.target as HTMLInputElement).files} )) )}/>
+                <Input type="file" disabled label="Files" value={inputs.files} callback={(e)=>(setInputs(state  => ( {...state,files: (e.target as HTMLInputElement).files} )) )}/>
+
+                <Input type="date" label="Date"  value={inputs.date} callback={(e)=>(setInputs(state  => ({...state, date:e.target.value})) )}/>
+                <Input type="date" disabled label="Date"  value={inputs.date} callback={(e)=>(setInputs(state  => ({...state, date:e.target.value})) )}/>
+
+                <Input type="time" label="Time"  value={inputs.time} callback={(e)=>(setInputs(state  => ({...state, time:e.target.value})) )}/>
+                <Input type="time" disabled label="Time"  value={inputs.time} callback={(e)=>(setInputs(state  => ({...state, time:e.target.value})) )}/>
+
             </>
         </>
     )

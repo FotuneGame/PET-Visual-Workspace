@@ -7,20 +7,19 @@ import { ThemeContext } from "@/providers/ThemeProvider";
 interface IProps{
     callback: (event: React.ChangeEvent<HTMLInputElement>) => void,
     label: string,
-    placeholder?: string,
     value?: any,
     disabled?:boolean
 }
 
-const TextInput:FC<IProps> = React.memo(({label,placeholder,value,callback,disabled})=>{
+const ColorInput:FC<IProps> = React.memo(({label,value,callback,disabled})=>{
 
     const [theme] = useContext(ThemeContext) ?? ["light"];
     return(
-        <div className={[style.wrapper,theme==='light' ? style.light : style.dark, disabled ? style.disabled : ""].join(" ")}>
+        <div className={[style.wrapper, theme==='light' ? style.light : style.dark, disabled ? style.disabled : ""].join(" ")}>
             <label>{label}</label>
-            <input placeholder={placeholder} type="text" value={value} onChange={callback} disabled={disabled}/>
+            <input type="color" value={value} onChange={callback} disabled={disabled}/>
         </div>
     )
 });
 
-export default TextInput;
+export default ColorInput;
