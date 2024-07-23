@@ -24,7 +24,9 @@ const TimeInput:FC<IProps> = React.memo(({label,placeholder,value,callback,disab
                 <input ref={ref} placeholder={placeholder} type="time" value={value} onChange={callback} disabled={disabled}/>
                 {
                         disabled ?
-                            <FiClock    color={"gray"} size="1.5rem"/>
+                            <Button type="ghost" disabled onClick={()=>{}}>
+                                <FiClock  color={"gray"} size="1.5rem"/>
+                            </Button>
                         :
                             <Button type="ghost" onClick={()=>{ref && ref.current && (ref.current as HTMLInputElement).showPicker()}}>
                                 <FiClock    color={theme==="light" ? "black" : "white"} size="1.5rem"/>

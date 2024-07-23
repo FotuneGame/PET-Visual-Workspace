@@ -25,7 +25,9 @@ const PasswordInput:FC<IProps> = React.memo(({label,placeholder,value,callback,d
                 <input placeholder={placeholder} type={view ? "text" : "password"} value={value} onChange={callback} disabled={disabled}/>
                 {
                     disabled ?
-                        <FiEyeOff  color={"gray"} size="1.5rem"/>
+                        <Button type="ghost" disabled onClick={()=>{}}>
+                            <FiEyeOff  color={"gray"} size="1.5rem"/>
+                        </Button>
                     :
                         <Button type="ghost" onClick={()=>{setView(!view)}}>
                             {

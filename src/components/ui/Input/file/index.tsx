@@ -24,7 +24,9 @@ const FileInput:FC<IProps> = React.memo(({label,value,callback,disabled})=>{
                 <input ref={ref} type={"file"} onChange={callback} disabled={disabled}/>
                 {
                     disabled ?
-                        <FiFilePlus  color={"gray"} size="1.5rem"/>
+                        <Button type="ghost" disabled onClick={()=>{}}>
+                            <FiFilePlus  color={"gray"} size="1.5rem"/>
+                        </Button>
                     :
                         <Button type="ghost" onClick={()=>{ref && ref.current && (ref.current as HTMLInputElement).click()}}>
                             <FiFilePlus  color={theme==="light" ? "black" : "white"} size="1.5rem"/>

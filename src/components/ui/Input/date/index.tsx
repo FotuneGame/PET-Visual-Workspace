@@ -24,7 +24,9 @@ const DataInput:FC<IProps> = React.memo(({label,placeholder,value,callback,disab
                 <input ref={ref} placeholder={placeholder} type="date" value={value} onChange={callback} disabled={disabled}/>
                 {
                         disabled ?
-                            <FiCalendar   color={"gray"} size="1.5rem"/>
+                            <Button type="ghost" disabled onClick={()=>{}}>
+                                <FiCalendar  color={"gray"} size="1.5rem"/>
+                            </Button>
                         :
                             <Button type="ghost" onClick={()=>{ref && ref.current && (ref.current as HTMLInputElement).showPicker()}}>
                                 <FiCalendar   color={theme==="light" ? "black" : "white"} size="1.5rem"/>
