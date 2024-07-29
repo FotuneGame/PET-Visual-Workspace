@@ -6,7 +6,7 @@ import { ThemeContext } from "@/providers/ThemeProvider";
 
 interface IProps{
     callback: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
-    label: string,
+    label?: string,
     placeholder?: string,
     value?: any,
     rows?: number,

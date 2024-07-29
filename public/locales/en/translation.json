@@ -5,5 +5,12 @@
         "dark": "Dark",
         "light": "Light",
         "system": "System"
+    },
+    "input":{
+        "search":"search",
+        "workspace":"Workspace"
+    },
+    "status":{
+        "empty":"Пусто..."
     }
 }

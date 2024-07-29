@@ -19,7 +19,7 @@ import TimeInput from "./time";
 interface IProps{
     type: "text" | "password" | "textarea" | "phone" | "email" | "checkbox" | "radio" | "color" | "number" | "range" | "file" | "date" | "time",
     callback: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
-    label: string,
+    label?: string,
     value: any,
     placeholder?: string,
     rows?: number,

@@ -21,6 +21,10 @@ import Card from "@/components/ui/Card";
 import Carousel from "@/components/ui/Carousel";
 import Colapsible from "@/components/ui/Colapsible";
 
+import { FiMeh,FiActivity } from "react-icons/fi"; //for test icons to command
+import Command from "@/components/ui/Command";
+import ContextMenu from "@/components/ui/ContextMenu";
+
 
 
 const Main = () =>{
@@ -60,9 +64,13 @@ const Main = () =>{
         date:"",
         time:"",
     });
+    
+    //exemple for context
+    const [arrayCardContext,setArrayCardContext] = useState<Array<React.ReactNode>>([]);
+
     useEffect(()=>{
-        console.log(inputs);
-    },[inputs])
+        console.log(inputs,arrayCardContext);
+    },[inputs,arrayCardContext])
 
     return(
         <>
@@ -236,7 +244,89 @@ const Main = () =>{
                     <h1>4</h1>
                 </Colapsible>
             </Card>
+            
+            <Card header={"Command"} description={"Command inside card"}>
+                <Command 
+                    arraysCommand={
+                        {
+                            crud:{
+                                names:["add","delete","update","create"],
+                                icons: [
+                                    <FiMeh size={"0.75rem"} color="gray"/>,
+                                    <FiActivity size={"0.75rem"} color="gray"/>,
+                                    <FiActivity size={"0.75rem"} color="gray"/>,
+                                    <FiMeh size={"0.75rem"} color="gray"/>
+                                ],
+                            },
+                            lol:{
+                                names:["q","w","e","r","y"],
+                                icons: [
+                                    <FiMeh size={"0.75rem"} color="gray"/>,
+                                ],
+                            },
+                            "component on":{
+                                names:["1 color","transition","bot"],
+                                icons: [],
+                            },
+                            "four type":{
+                                names:["1","12","3"],
+                            },
+                            "five type":{
+                                names:[],
+                            }
+                        }
+                    }   
+                    callback={(command)=>{console.log(command)}}
+                />
+            </Card>
 
+
+            <Card header={"ContextMenu"} description={"ContextMenu inside card width:800px,height:400px"}>
+                <div style={{width:"800px",height:"400px"}}>
+                    <ContextMenu menu={
+                        <Command 
+                            arraysCommand={
+                                {
+                                    crud:{
+                                        names:["add","delete","update","create"],
+                                        icons: [
+                                            <FiMeh size={"0.75rem"} color="gray"/>,
+                                            <FiActivity size={"0.75rem"} color="gray"/>,
+                                            <FiActivity size={"0.75rem"} color="gray"/>,
+                                            <FiMeh size={"0.75rem"} color="gray"/>
+                                        ],
+                                    },
+                                    "component on":{
+                                        names:["color","transition","bot"],
+                                        icons: [],
+                                    }
+                                }
+                            }   
+                            callback={
+                                (command)=>{
+                                    setArrayCardContext([...arrayCardContext,<Card header={command} description={"Add component"}>{command}</Card>])
+                                }
+                            }
+                        />
+                    }>
+                        {arrayCardContext.map((el,index)=>{
+                            return(
+                                <div key={"card_inside_contextmenu_"+index}>
+                                    {el}
+                                </div>
+                            )
+                        })}
+                    </ContextMenu>
+                </div>
+            </Card>
+
+            <Card header={"ContextMenu"} description={"ContextMenu inside card width:100vh,height:100vh"}>
+                <div style={{width:"100vh",height:"100vh"}}>
+                    <ContextMenu />
+                </div>
+            </Card>
+            
+            
 
         </>
     )

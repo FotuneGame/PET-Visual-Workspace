@@ -1,0 +1,1 @@
+export type PostitionType = {x:number,y:number};
