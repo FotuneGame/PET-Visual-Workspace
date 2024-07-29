@@ -10,45 +10,46 @@ interface IProps{
     disabled?: boolean,
     onClick:()=>void,
     children?:React.ReactChild,
+    className ?: string,
 }
 
-const Button: FC<IProps> = React.memo(({type,disabled,onClick,children}) =>{
+const Button: FC<IProps> = React.memo(({type,disabled,onClick,children,className}) =>{
     const [theme] = useContext(ThemeContext) ?? ["light"];
 
     switch(type){
         case "agree":
             return(
-                <button className={[style.btn, theme==="light" ? style.agree :  style_dark.agree].join(" ")} onClick={onClick} disabled={disabled}>
+                <button className={[style.btn, theme==="light" ? style.agree :  style_dark.agree, className].join(" ")} onClick={onClick} disabled={disabled}>
                     {children}
                 </button>
             );
         case "destructive":
             return(
-                <button className={[style.btn, theme==="light" ? style.destructive :  style_dark.destructive].join(" ")} onClick={onClick} disabled={disabled}>
+                <button className={[style.btn, theme==="light" ? style.destructive :  style_dark.destructive, className].join(" ")} onClick={onClick} disabled={disabled}>
                     {children}
                 </button>
             );
         case "ghost":
             return(
-                <button className={[style.btn, theme==="light" ? style.ghost :  style_dark.ghost].join(" ")} onClick={onClick} disabled={disabled}>
+                <button className={[style.btn, theme==="light" ? style.ghost :  style_dark.ghost, className].join(" ")} onClick={onClick} disabled={disabled}>
                     {children}
                 </button>
             );
         case "link":
             return(
-                <button className={[style.btn, theme==="light" ? style.link :  style_dark.link].join(" ")} onClick={onClick} disabled={disabled}>
+                <button className={[style.btn, theme==="light" ? style.link :  style_dark.link, className].join(" ")} onClick={onClick} disabled={disabled}>
                     {children}
                 </button>
             );
         case "outline":
             return(
-                <button className={[style.btn, theme==="light" ? style.outline :  style_dark.outline].join(" ")} onClick={onClick} disabled={disabled}>
+                <button className={[style.btn, theme==="light" ? style.outline :  style_dark.outline, className].join(" ")} onClick={onClick} disabled={disabled}>
                     {children}
                 </button>
             );
         default:
             return(
-                <button className={[style.btn, theme==="light" ? style.default :  style_dark.default].join(" ")} onClick={onClick} disabled={disabled}>
+                <button className={[style.btn, theme==="light" ? style.default :  style_dark.default, className].join(" ")} onClick={onClick} disabled={disabled}>
                     {children}
                 </button>
             );

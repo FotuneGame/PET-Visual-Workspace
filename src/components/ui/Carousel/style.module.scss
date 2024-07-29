@@ -1,0 +1,98 @@
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        .content_wrapper{
+            overflow: hidden;
+            width: 90%;
+            height: 80%;
+            .content{
+                height: 100%;
+                display: flex;
+                transition: all 250ms linear;
+                -ms-overflow-style: none;  /* hide scrollbar in IE and Edge */
+                scrollbar-width: none;  /* hide scrollbar in Firefox */
+            }
+            .content > * {
+                border: none;
+                padding: 0px;
+                width: 100%;
+                height: 100%;
+                flex-shrink: 0;
+                flex-grow: 1;
+            }
+            .content::-webkit-scrollbar, .content::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+.btn_left, .btn_right, .btn_down, .btn_up{
+    position: absolute;
+    z-index: 1;
+    margin-left: -15px;
+    margin-right: -15px;
+    width: 30px;
+    height: 30px;
+}
+
+.btn_left{
+    top: 50%;
+    left:0;
+}
+
+.btn_right{
+    top: 50%;
+    right:0;
+}
+
+.btn_up{
+    left: 50%;
+    top:0;
+}
+
+.btn_down{
+    left: 50%;
+    bottom:0;
+}
+
+
+@media screen and (max-width: 500px) {
+    .btn_down, .btn_up, .btn_left, .btn_right{
+        margin-left: -30px;
+        margin-right: -30px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .btn_right > *{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .btn_left > *{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .btn_up > *{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .btn_down > *{
+        width: 2rem;
+        height: 2rem;
+    }
+}
