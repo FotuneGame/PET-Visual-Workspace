@@ -49,7 +49,7 @@ const Command: FC<IProps> = React.memo(({arraysCommand, callback})=>{
                                                             &&
                                                             arraysCommand[key].icons?.[index_command]
                                                         }
-                                                        <Button type="ghost" onClick={()=>{setCommand(el);callback(el)}}>{el}</Button>
+                                                        <Button type="ghost" onClick={()=>{callback(el)}}>{el}</Button>
                                                     </div>
                                                 )
                                             })
