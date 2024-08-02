@@ -1,9 +1,9 @@
 import React, {FC, useState, useContext} from "react";
 import style from "./style.module.scss";
-import Input from "../Input";
-import Button from "../Button";
+import {Input} from "../Input";
+import {Button} from "../Button";
 import { FiSearch } from "react-icons/fi";
-import { ThemeContext } from "@/providers/ThemeProvider";
+import { ThemeContext } from "@/providers";
 import { useTranslation } from 'react-i18next';
 
 interface IProps{
@@ -16,7 +16,7 @@ interface IProps{
     callback:(command:string)=>void;
 }
 
-const Command: FC<IProps> = React.memo(({arraysCommand, callback})=>{
+export const Command: FC<IProps> = React.memo(({arraysCommand, callback})=>{
     
     const [theme] = useContext(ThemeContext) ?? ["light"];
     const [command,setCommand] = useState<string>("");
@@ -67,5 +67,3 @@ const Command: FC<IProps> = React.memo(({arraysCommand, callback})=>{
         </div>
     );
 });
-
-export default Command;

@@ -14,7 +14,7 @@
         align-items: center;
         .back{
             min-width: 50%;
-            border-radius: 4px;
+            border-radius: var(--border-radius);
             padding: 0.5rem;
             .header{
                 display: flex;
@@ -45,6 +45,6 @@
 }
 
 .light{
-    background: white;
+    background: var(--backgroud_dark);
     color: black;
 }

@@ -1,6 +1,6 @@
 import React,{FC, useContext, useEffect, useRef, useState} from "react";
 import style from "./style.module.scss";
-import { ThemeContext } from "@/providers/ThemeProvider";
+import { ThemeContext } from "@/providers";
 import { useTranslation } from 'react-i18next';
 import { usePositionContextmenu } from "@/hooks/usePositionContextmenu";
 
@@ -9,7 +9,7 @@ interface IProps{
     menu?:React.ReactNode
 }
 
-const ContextMenu:FC<IProps> = React.memo(({children,menu})=>{
+export const ContextMenu:FC<IProps> = React.memo(({children,menu})=>{
 
     const ref = useRef(null);
     const position = usePositionContextmenu(ref);
@@ -33,5 +33,3 @@ const ContextMenu:FC<IProps> = React.memo(({children,menu})=>{
         </div>
     )
 })
-
-export default ContextMenu;

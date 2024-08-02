@@ -1,7 +1,7 @@
 import { createBrowserRouter,RouteObject } from "react-router-dom";
 import { authRouters } from "./auth";
 import { loginRouters } from "./login";
-import NotFound from "@components/layout/NotFound";
+import {NotFound} from "@widgets";
 import Pages from "@pages";
 import App from "@/App";
 

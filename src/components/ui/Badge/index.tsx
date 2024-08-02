@@ -3,14 +3,14 @@ import style_dark from "./style_dark.module.scss";
 import style from "./style.module.scss";
 
 import { useContext } from "react";
-import { ThemeContext } from "@/providers/ThemeProvider";
+import { ThemeContext } from "@/providers";
 
 interface IProps{
     type?: "agree" | "destructive" | "outline" ,
     children?:React.ReactChild,
 }
 
-const Badge: FC<IProps> = React.memo(({type,children}) =>{
+export const Badge: FC<IProps> = React.memo(({type,children}) =>{
     const [theme] = useContext(ThemeContext) ?? ["light"];
 
     switch(type){
@@ -40,5 +40,3 @@ const Badge: FC<IProps> = React.memo(({type,children}) =>{
             );
     }
 });
-
-export default Badge;

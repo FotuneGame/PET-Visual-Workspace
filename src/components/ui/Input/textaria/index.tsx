@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import style from "./style.module.scss";
 
 import { useContext } from "react";
-import { ThemeContext } from "@/providers/ThemeProvider";
+import { ThemeContext } from "@/providers";
 
 interface IProps{
     callback: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,

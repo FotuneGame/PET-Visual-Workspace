@@ -23,16 +23,15 @@
     "baseUrl" : "./src",
     "paths": {
       "@/*":["./*"],
-      "@components/*": ["./components/*"],
-      "@ui/*": ["./components/ui/*"],
-      "@layout/*": ["./components/layout/*"],
-      "@pages": ["./pages/."],
+      "@ui": ["./components/ui/"],
+      "@widgets": ["./components/widgets/"],
+      "@pages": ["./pages/"],
       "@hooks/*": ["./hooks/*"],
-      "@api/*": ["./api/*"],
+      "@api/": ["./api/"],
       "@utils/*": ["./utils/*"],
       "@store/*": ["./store/*"],
-      "@providers/*": ["./providers/*"],
-      "@router": ["./router/."]
+      "@providers": ["./providers/"],
+      "@router": ["./router/"]
     }
   },
   "include": [

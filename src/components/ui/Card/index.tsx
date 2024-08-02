@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import style from "./style.module.scss";
 
 import { useContext } from "react";
-import { ThemeContext } from "@/providers/ThemeProvider";
+import { ThemeContext } from "@/providers";
 
 
 interface IProps{
@@ -11,7 +11,7 @@ interface IProps{
     children: React.ReactNode
 }
 
-const Card:FC<IProps> = React.memo(({header,description, children}) =>{
+export const Card:FC<IProps> = React.memo(({header,description, children}) =>{
 
     const [theme] = useContext(ThemeContext) ?? ["light"];
 
@@ -29,5 +29,3 @@ const Card:FC<IProps> = React.memo(({header,description, children}) =>{
         </div>
     );
 })
-
-export default Card;

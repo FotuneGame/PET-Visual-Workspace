@@ -1,13 +1,13 @@
 import React from "react";
-import { ThemeContext } from "@/providers/ThemeProvider";
+import { ThemeContext } from "@/providers";
 import { useContext } from "react";
 import style from "./style.module.scss";
-import Button from "../Button";
+import {Button} from "../Button";
 import { useTranslation } from 'react-i18next';
 
 
 
-const SwitchTheme = () =>{
+export const SwitchTheme = () =>{
     const {t} = useTranslation();
     const context = useContext(ThemeContext) ;
     if(!context) return null;
@@ -21,5 +21,3 @@ const SwitchTheme = () =>{
         </div>
     );
 }
-
-export default SwitchTheme;

@@ -2,11 +2,11 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 import {langs} from "@/i18n";
 import style from "./style.module.scss";
-import Button from "../Button";
+import {Button} from "../Button";
 
 
 
-const SwitchLang = () => {
+export const SwitchLang = () => {
     const {i18n} = useTranslation();
     return(
         <div className={style.wrapper}>
@@ -25,5 +25,3 @@ const SwitchLang = () => {
         </div>
     );
 }
-
-export default SwitchLang;

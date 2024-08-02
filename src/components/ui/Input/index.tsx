@@ -30,7 +30,7 @@ interface IProps{
     disabled?:boolean
 } 
 
-const Input: FC<IProps> = React.memo(({
+export const Input: FC<IProps> = React.memo(({
     type,
     callback,
     label,
@@ -74,5 +74,3 @@ const Input: FC<IProps> = React.memo(({
             return <TextInput placeholder={placeholder} value={value} label={label} callback={callback} disabled={disabled}/>;
     }
 })
-
-export default Input;

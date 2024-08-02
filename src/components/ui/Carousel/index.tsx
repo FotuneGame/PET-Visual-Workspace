@@ -1,6 +1,6 @@
 import React, {FC, useContext, useState, useEffect} from "react";
 import style from "./style.module.scss";
-import Button from "../Button";
+import {Button} from "../Button";
 import { FiArrowLeft, FiArrowRight, FiArrowUp, FiArrowDown } from "react-icons/fi";
 
 import { ThemeContext } from "@/providers/ThemeProvider";
@@ -10,7 +10,7 @@ interface IProps{
     orientation?: "vertical" | "horizontal",
 }
 
-const Carousel:FC<IProps> = React.memo( ({children,orientation})=>{
+export const Carousel:FC<IProps> = React.memo( ({children,orientation})=>{
 
     const [currentIndex, setCurrentIndex] = useState<number>(0)
     const [length, setLength] = useState<number>(React.Children.count(children));
@@ -81,5 +81,3 @@ const Carousel:FC<IProps> = React.memo( ({children,orientation})=>{
         )
     }
 });
-
-export default Carousel;

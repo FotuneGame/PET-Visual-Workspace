@@ -1,16 +1,16 @@
 import React, {FC, useState, useContext} from "react";
 import style from "./style.module.scss";
-import Button from "../Button";
+import {Button} from "../Button";
 import { FiCode } from "react-icons/fi";
 
-import { ThemeContext } from "@/providers/ThemeProvider";
+import { ThemeContext } from "@/providers";
 
 interface IProps{
     name: string,
     children: React.ReactNode,
 }
 
-const Colapsible: FC<IProps> = React.memo(({name, children})=>{
+export const Colapsible: FC<IProps> = React.memo(({name, children})=>{
     
     const [acvitve, setActive] = useState<boolean>(false);
     const [theme] = useContext(ThemeContext) ?? ["light"];
@@ -29,5 +29,3 @@ const Colapsible: FC<IProps> = React.memo(({name, children})=>{
         </div>
     )
 });
-
-export default Colapsible;

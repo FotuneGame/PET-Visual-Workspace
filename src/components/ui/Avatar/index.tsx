@@ -6,12 +6,10 @@ interface IProps{
     alt?: string,
 }
 
-const Avatar:FC<IProps> = React.memo(({src,alt}) =>{
+export const Avatar:FC<IProps> = React.memo(({src,alt}) =>{
     return (
         <div className={style.wrapper}>
             <img src={src} alt={alt}/>   
         </div>
     )
 });
-
-export default Avatar;

@@ -24,10 +24,10 @@
     width: 12px;
 }
 .wrapper::-webkit-scrollbar-track {
-    border-radius: 4px;      
+    border-radius: var(--border-radius);    
 }
 .wrapper::-webkit-scrollbar-thumb {
-    border-radius: 3px;  
+    border-radius: calc(var(--border-radius) - 1); 
     border: none;
 }
 
@@ -36,7 +36,7 @@
 .dark{
     color: white;
     border: 1px dotted white;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     background-color: var(--backgroud_dark);
 }
 .dark::-webkit-scrollbar-track {
@@ -52,7 +52,7 @@
 .light{
     color: black;
     border: 1px dotted black;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     background-color: white;
 }
 .light::-webkit-scrollbar-track {

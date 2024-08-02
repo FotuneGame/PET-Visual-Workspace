@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import style from './style.module.scss';
 import { useContext } from "react";
-import { ThemeContext } from "@/providers/ThemeProvider";
+import { ThemeContext } from "@/providers";
 import { Link } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
 
@@ -15,7 +15,7 @@ interface IProps{
     key_hash?:string,
 }
 
-const Breadcrumb: FC<IProps> = React.memo(({arrayPath,key_hash})=>{
+export const Breadcrumb: FC<IProps> = React.memo(({arrayPath,key_hash})=>{
 
     const [theme] = useContext(ThemeContext) ?? ["light"];
 
@@ -40,5 +40,3 @@ const Breadcrumb: FC<IProps> = React.memo(({arrayPath,key_hash})=>{
         </ul>
     )
 });
-
-export default Breadcrumb;

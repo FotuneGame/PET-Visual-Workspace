@@ -12,5 +12,11 @@
     },
     "status":{
         "empty":"Пусто..."
+    },
+    "navbar":{
+        "sign": "Sign",
+        "out": "Exit",
+        "setting": "Settings",
+        "link": "Links"
     }
 }

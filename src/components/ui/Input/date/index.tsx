@@ -1,10 +1,10 @@
 import React, {FC, useRef} from "react";
 import style from "./style.module.scss";
 import { FiCalendar  } from "react-icons/fi";
-import Button from "../../Button";
+import {Button} from "../../Button";
 
 import { useContext } from "react";
-import { ThemeContext } from "@/providers/ThemeProvider";
+import { ThemeContext } from "@/providers";
 
 interface IProps{
     callback: (event: React.ChangeEvent<HTMLInputElement>) => void,

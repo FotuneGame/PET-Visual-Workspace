@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { useContext } from 'react';
-import { AuthContext } from '@providers/AuthProvider';
-import NotFound from "@/components/layout/NotFound";
+import { AuthContext } from '@providers';
+import {NotFound} from "@widgets";
 
 const Private = () =>{
     const auth = useContext<boolean>(AuthContext);

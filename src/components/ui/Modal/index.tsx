@@ -1,10 +1,10 @@
 import React, {FC, useState} from "react";
 import style from "./style.module.scss";
-import Button from "../Button";
+import {Button} from "../Button";
 import { FiX  } from "react-icons/fi";
 
 import { useContext } from "react";
-import { ThemeContext } from "@/providers/ThemeProvider";
+import { ThemeContext } from "@/providers";
 
 interface IProps{
     name_btn:string,
@@ -12,7 +12,7 @@ interface IProps{
     children: React.ReactChild,
 }
 
-const Modal:FC<IProps> = React.memo(({children,header,name_btn}) =>{
+export const Modal:FC<IProps> = React.memo(({children,header,name_btn}) =>{
 
     const [active,setActive] = useState<boolean>(false);
     const [theme] = useContext(ThemeContext) ?? ["light"];
@@ -40,5 +40,3 @@ const Modal:FC<IProps> = React.memo(({children,header,name_btn}) =>{
         </>
     )
 });
-
-export default Modal;

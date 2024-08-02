@@ -3,7 +3,7 @@ import type { ThemeType, ThemeContextType} from "./types";
 
 export const ThemeContext = createContext<ThemeContextType>(undefined);
 
-const ThemeProvider = ({children}:Readonly<{children:React.ReactElement}>) =>{
+export const ThemeProvider = ({children}:Readonly<{children:React.ReactElement}>) =>{
     const [theme,setTheme] = useState<ThemeType>( localStorage.getItem("theme") as ThemeType);
     useEffect(()=>{
         switch(theme){
@@ -37,5 +37,3 @@ const ThemeProvider = ({children}:Readonly<{children:React.ReactElement}>) =>{
         </ThemeContext.Provider>
     )
 }
-
-export default ThemeProvider;

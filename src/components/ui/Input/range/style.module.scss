@@ -3,7 +3,7 @@
     flex-direction: column;
     gap:0.25rem;
     input[type="range"]{
-        border-radius: 4px;
+        border-radius: var(--border-radius);
     }
 }
 

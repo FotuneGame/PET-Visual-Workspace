@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom/client';
 
 import { RouterProvider} from "react-router-dom";
 import {router} from '@router';
-import Loading from "@ui/Loading";
+import {Loading} from "@ui";
 
 import { Provider } from 'react-redux';
 import {store} from '@store/.';
 
 import './i18n';
-import ThemeProvider from '@providers/ThemeProvider';
-import AuthProvider from './providers/AuthProvider';
+import {ThemeProvider,AuthProvider} from '@providers';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

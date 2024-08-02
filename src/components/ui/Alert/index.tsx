@@ -2,10 +2,10 @@ import React, {FC} from "react";
 import style from "./style.module.scss";
 
 import { useContext } from "react";
-import { ThemeContext } from "@/providers/ThemeProvider";
+import { ThemeContext } from "@/providers";
 
 import { FiX , FiAlertOctagon, FiTerminal   } from "react-icons/fi";
-import Button from "../Button";
+import {Button} from "../Button";
 
 interface IProps{
     type?: "error"
@@ -17,7 +17,7 @@ interface IProps{
 
 
 
-const Alert:FC<IProps> = React.memo(({type,activeState,message,header}) =>{
+export const Alert:FC<IProps> = React.memo(({type,activeState,message,header}) =>{
 
     const [theme] = useContext(ThemeContext) ?? ["light"];
     if(activeState && !activeState[0]) return null;
@@ -54,5 +54,3 @@ const Alert:FC<IProps> = React.memo(({type,activeState,message,header}) =>{
             )
     }
 })
-
-export default Alert;

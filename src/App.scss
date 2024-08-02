@@ -8,5 +8,13 @@
 }
 
 body{
+    --background_body_dark: white;
     --backgroud_dark: white;
+    --border-radius: 4px;
+    --margin-content: 5rem;
+}
+
+.content{
+    margin: 5rem var(--margin-content) 0 var(--margin-content);
+    min-height: 100vh;
 }

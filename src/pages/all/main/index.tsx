@@ -7,24 +7,8 @@ import { actions } from "@store/slice/test";
 
 import { useTranslation } from 'react-i18next';
 
-import SwitchLang from "@/components/ui/SwitchLang";
-import SwitchTheme from "@/components/ui/SwitchTheme";
-import Button from "@/components/ui/Button";
-import Dropdown from "@/components/ui/Dropdown";
-import Alert from "@/components/ui/Alert";
-import Modal from "@/components/ui/Modal";
-import Breadcrumb from "@/components/ui/Breadcrumb";
-import Input from "@/components/ui/Input";
-import Avatar from "@/components/ui/Avatar";
-import Badge from "@/components/ui/Badge";
-import Card from "@/components/ui/Card";
-import Carousel from "@/components/ui/Carousel";
-import Colapsible from "@/components/ui/Colapsible";
-
+import {SwitchLang,SwitchTheme,Button,Dropdown,Alert,Modal,Breadcrumb,Input,Avatar,Badge,Card,Carousel,Colapsible,Command, ContextMenu} from "@/components/ui/";
 import { FiMeh,FiActivity } from "react-icons/fi"; //for test icons to command
-import Command from "@/components/ui/Command";
-import ContextMenu from "@/components/ui/ContextMenu";
-
 
 
 const Main = () =>{
